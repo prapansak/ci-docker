@@ -1,7 +1,5 @@
 # CI/CD Docker
 
-## Docker Image
-
 ### Docker hub
 [plimble/ci](https://hub.docker.com/r/plimble/ci/)
 
