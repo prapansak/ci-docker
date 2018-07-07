@@ -24,6 +24,7 @@ RUN apt-get update \
     wget \
     zip \
     tzdata \
+    rsync \
  && rm -rf /var/lib/apt/lists/*
 
 # Setup the locale
@@ -52,11 +53,13 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 RUN curl -sL https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz -o go${GO_VERSION}.linux-amd64.tar.gz \
  && mkdir -p /usr/local/go \
  && tar -C /usr/local/go -xzf go${GO_VERSION}.linux-amd64.tar.gz --strip-components=1 go \
- && rm go${GO_VERSION}.linux-amd64.tar.gz
+ && rm go${GO_VERSION}.linux-amd64.tar.gz \
+ && mkdir -p /root/go/src \
+ && mkdir -p /root/go/bin
 
 ENV GOPATH=/root/go
 ENV GOROOT=/usr/local/go
-ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
+ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin:/root/go/bin
 
 # Install Helm
 RUN curl -fSL "https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz" -o helm.tar.gz && \
@@ -88,3 +91,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
     sudo apt-get update && sudo apt-get install -y --no-install-recommends yarn && \
     rm -rf /var/lib/apt/lists/* && \
     yarn -v
+
+# Install Dep and go-bindata
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh && \
+    go get -u github.com/jteeuwen/go-bindata/...
