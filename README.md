@@ -32,6 +32,7 @@ docker run -d \
 -e VSTS_WORK='/var/vsts/$VSTS_AGENT' \
 -v /var/vsts:/var/vsts \
 -v /var/run/docker.sock:/var/run/docker.sock \
+--net=host \
 --name vsts-agent1 \
 plimble/ci:vsts
 ```
