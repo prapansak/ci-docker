@@ -1,6 +1,5 @@
 # CI/CD Docker
 
-
 ## Tools
 - go
   - dep
@@ -12,8 +11,20 @@
 - helm
 - docker
 
+## Docker Image
 
-### VSTS Agent Usage
+```
+FROM plimble/ci
+```
+
+### Tags
+
+- [go (ci/go/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/ci/go/Dockerfile)
+- [node (ci/node/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/ci/node/Dockerfile)
+- [latest (go and node) (ci/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/ci/Dockerfile)
+- [vsts (vsts/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/vsts/Dockerfile)
+
+## VSTS Agent
 
 ```sh
 docker run -d \
