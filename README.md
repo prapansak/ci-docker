@@ -4,7 +4,7 @@
 ## Tools
 - go
   - dep
-  - bin-data
+  - go-bindata
 - node
   - yarn
 - rancher
