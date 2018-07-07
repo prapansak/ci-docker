@@ -1,7 +1,7 @@
 # CI/CD Docker
 
 
-### Usage VSTS
+### VSTS Usage
 
 ```sh
 docker run -d \
