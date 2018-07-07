@@ -1,16 +1,5 @@
 # CI/CD Docker
 
-## Tools
-- go
-  - dep
-  - go-bindata
-- node
-  - yarn
-- rancher
-- kubectl
-- helm
-- docker
-
 ## Docker Image
 
 ### Docker hub
@@ -22,6 +11,17 @@
 - [node (ci/node/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/ci/node/Dockerfile)
 - [latest (go and node) (ci/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/ci/Dockerfile)
 - [vsts (vsts/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/vsts/Dockerfile)
+
+## Tools
+- go
+  - dep
+  - go-bindata
+- node
+  - yarn
+- rancher
+- kubectl
+- helm
+- docker
 
 ## VSTS Agent
 
