@@ -95,3 +95,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
 # Install Dep and go-bindata
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh && \
     go get -u github.com/jteeuwen/go-bindata/...
+
+# Install Serverless
+RUN npm config set user 0 && \
+    npm config set unsafe-perm true && \
+    npm install -g serverless

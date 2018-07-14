@@ -16,6 +16,7 @@
   - go-bindata
 - node
   - yarn
+  - severless
 - rancher
 - kubectl
 - helm

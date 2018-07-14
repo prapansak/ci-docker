@@ -27,7 +27,8 @@ rm docker.tgz && \
 docker -v && \
 curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
 mv kubectl /usr/local/bin/ && \
-chmod +x /usr/local/bin/kubectl
+chmod +x /usr/local/bin/kubectl && \
+npm install -g serverless
 
 COPY docker-entrypoint.sh /usr/local/bin/
 

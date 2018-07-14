@@ -69,6 +69,7 @@ RUN go get -u github.com/jteeuwen/go-bindata/... && \
   chmod 644 ~/.ssh/known_hosts && \
   git config --global url."git@github.com:".insteadOf "https://github.com/" && \
   git config --global url."git@gitlab.com:".insteadOf "https://gitlab.com/" && \
-  git config --global url."git@bitbucket.org:".insteadOf "https://bitbucket.org/"
+  git config --global url."git@bitbucket.org:".insteadOf "https://bitbucket.org/" && \
+	npm install -g serverless
 
 WORKDIR $GOPATH
