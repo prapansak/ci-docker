@@ -1,6 +1,6 @@
 FROM microsoft/vsts-agent:ubuntu-16.04-docker-17.06.0-ce
 
-ARG GO_VERSION=1.10.3
+ARG GO_VERSION=1.11
 ARG KUBECTL_VERSION=v1.10.3
 ARG RANCHER_CLI_VERSION=v2.0.4
 ARG HELM_VERSION=v2.9.1
@@ -60,6 +60,7 @@ RUN curl -sL https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz -o go${
 ENV GOPATH=/root/go
 ENV GOROOT=/usr/local/go
 ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin:/root/go/bin
+ENV GO111MODULE=auto
 
 # Install Helm
 RUN curl -fSL "https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz" -o helm.tar.gz && \
