@@ -10,6 +10,16 @@
 - [latest (go and node) (ci/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/ci/Dockerfile)
 - [vsts (vsts/Dockerfile)](https://github.com/plimble/ci-docker/blob/master/vsts/Dockerfile)
 
+## Versions
+
+```
+DOCKER_VERSION=17.04.0-ce
+KUBECTL_VERSION=v1.10.3
+RANCHER_CLI_VERSION=v2.0.4
+HELM_VERSION=v2.9.1
+GOLANG_VERSION=1.11
+```
+
 ## Tools
 - go
   - dep
