@@ -8,6 +8,8 @@ ARG KUBECTL_VERSION=v1.10.3
 ARG RANCHER_CLI_VERSION=v2.0.4
 ARG HELM_VERSION=v2.9.1
 
+ENV GO111MODULE=auto
+
 RUN set -x && \
 curl -fSL "https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz" -o helm.tar.gz && \
 tar -xzvf helm.tar.gz && \
