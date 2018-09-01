@@ -2,8 +2,9 @@
 
 DOCKER_VERSION=17.04.0-ce
 KUBECTL_VERSION=v1.10.3
-RANCHER_CLI_VERSION=v2.0.2
+RANCHER_CLI_VERSION=v2.0.4
 HELM_VERSION=v2.9.1
+GOLANG_VERSION=1.11
 
 docker build -t plimble/ci:go \
   --build-arg DOCKER_VERSION=$DOCKER_VERSION \
@@ -21,5 +22,9 @@ docker build -t plimble/ci:node \
   -f ci/node/Dockerfile \
   .
 
-docker build -t plimble/ci -f ci/Dockerfile .
+docker build -t plimble/ci \
+  --build-arg GOLANG_VERSION=$GOLANG_VERSION \
+  -f ci/Dockerfile \
+  .
+
 

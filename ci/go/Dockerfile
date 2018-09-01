@@ -1,4 +1,4 @@
-FROM golang:1-alpine
+FROM golang:1.11-alpine
 
 RUN apk add --no-cache tar gzip curl git openssh-client bash g++ ca-certificates
 
