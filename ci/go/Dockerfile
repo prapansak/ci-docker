@@ -5,7 +5,7 @@ RUN apk add --no-cache tar gzip curl git openssh-client bash g++ ca-certificates
 ARG DOCKER_CHANNEL=edge
 ARG DOCKER_VERSION=17.04.0-ce
 ARG KUBECTL_VERSION=v1.10.3
-ARG RANCHER_CLI_VERSION=v2.0.2
+ARG RANCHER_CLI_VERSION=v2.0.4
 ARG HELM_VERSION=v2.9.1
 
 RUN set -x && \
@@ -35,10 +35,7 @@ chmod 700 ~/.ssh && \
 ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && \
 ssh-keyscan github.com >> ~/.ssh/known_hosts && \
 ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts && \
-chmod 644 ~/.ssh/known_hosts && \
-git config --global url."git@github.com:".insteadOf "https://github.com/" && \
-git config --global url."git@gitlab.com:".insteadOf "https://gitlab.com/" && \
-git config --global url."git@bitbucket.org:".insteadOf "https://bitbucket.org/"
+chmod 644 ~/.ssh/known_hosts
 
 COPY docker-entrypoint.sh /usr/local/bin/
 

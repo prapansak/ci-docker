@@ -5,7 +5,7 @@ RUN apk add --no-cache tar gzip libc6-compat curl git openssh-client bash g++ ca
 ARG DOCKER_CHANNEL=edge
 ARG DOCKER_VERSION=17.04.0-ce
 ARG KUBECTL_VERSION=v1.10.3
-ARG RANCHER_CLI_VERSION=v2.0.2
+ARG RANCHER_CLI_VERSION=v2.0.4
 ARG HELM_VERSION=v2.9.1
 
 RUN set -x && \
