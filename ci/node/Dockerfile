@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:10
 
-RUN apk add --no-cache tar gzip libc6-compat curl git openssh-client bash g++ ca-certificates
+RUN apk add --no-cache tar gzip libc6-compat curl git openssh-client bash g++ ca-certificates python-dev
 
 ARG DOCKER_CHANNEL=edge
 ARG DOCKER_VERSION=17.04.0-ce
@@ -28,7 +28,12 @@ docker -v && \
 curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
 mv kubectl /usr/local/bin/ && \
 chmod +x /usr/local/bin/kubectl && \
-npm install -g serverless
+npm install -g serverless && \
+curl -O https://bootstrap.pypa.io/get-pip.py && \
+python get-pip.py && \
+pip --version && \
+pip install awscli && \
+aws --version
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
