@@ -27,6 +27,7 @@ GOLANG_VERSION=1.11
 - node
   - yarn
   - severless
+  - aws-cli
 - rancher
 - kubectl
 - helm
